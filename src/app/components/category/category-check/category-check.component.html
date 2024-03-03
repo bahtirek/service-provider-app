@@ -1,0 +1,11 @@
+<form [formGroup]="detailsForm">
+  <h3 class="mb-lg">Providing services</h3>
+  <div>
+    <div class="form-element column-content-3  mb-md" formArrayName="category">
+      <div *ngFor="let categoryControl of category.controls; let i=index" [formGroupName]="i" class="form-element-checkbox mb-md">
+        <input type="checkbox" formControlName="categoryCheck" id="{{'categoryId' + i}}">
+        <label for="{{'categoryId' + i}}">{{allCategorys[i]['name']}}</label>
+      </div>
+    </div>
+  </div>
+</form>

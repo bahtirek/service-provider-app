@@ -1,0 +1,22 @@
+<ion-menu contentId="main-content" class="main-menu">
+  <ion-header class="ion-no-border">
+    <ion-toolbar class="">
+      <ion-buttons slot="end">
+          <ion-menu-toggle>
+          <ion-thumbnail class="menu">
+            <ion-icon name="close-outline"></ion-icon>
+          </ion-thumbnail>
+        </ion-menu-toggle>
+        </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    @for (item of loggedInMenuItems; track $index) {
+        <ion-list>
+          <ion-item [button]="true">
+            <ion-label (click)="navigateTo(item.url)">{{item.name}}</ion-label>
+          </ion-item>
+        </ion-list>
+      }
+  </ion-content>
+</ion-menu>

@@ -1,0 +1,43 @@
+@import "./assets/scss/forms/forms-dir.scss";
+@import "./assets/scss/base/base-dir.scss";
+@import "./assets/scss/components/components-dir.scss";
+@import "./assets/scss/layout/layout-dir.scss";
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 300,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+body {
+  min-width: 100px;
+  min-height: 100%;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  color: #666666;
+  padding: 60px 24px 0;
+  height: 100%;
+  background-color: #f6f8fb;
+  @media (max-width: $screen-sm-max) {
+    padding: 60px 16px;
+  }
+}
+
+.main-content {
+  padding-left: 100px;
+}
+
+* {
+  margin: 0; padding: 0;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box; /* 1 */
+}
+.list-md {
+  padding: none !important;
+}

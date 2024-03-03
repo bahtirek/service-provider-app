@@ -1,0 +1,73 @@
+@import "../base/breakpoints.scss";
+
+.provider-card.card {
+  padding: 15px 20px;
+  position: relative;
+
+  .more-btn-cta {
+    .material-symbols-outlined {
+      display: inline-block;
+      margin-bottom: -6px;
+    }
+  }
+  @media (max-width: $screen-sm-max) {
+    padding: 6px 10px;
+  }
+}
+
+.provider-list-item.card {
+  padding: 0px;
+  .hoverable {
+    border-bottom: 1px solid var(--border-color);
+    padding: 10px 20px;
+    &:hover {
+      background-color: var(--bg-hover);
+    }
+    @media (max-width: $screen-sm-max) {
+      padding: 4px 10px;
+    }
+  }
+  .last-item .hoverable {
+    border: none;
+  }
+}
+
+.provider-card, .provider-list-item {
+  li {
+    padding: 3px 0;
+    div {
+      min-height: 30px;
+      align-items: center;
+      display: flex;
+    }
+  }
+
+  .work-hours-list {
+    width: 100%;
+    max-width: 300px;
+    li {
+      display: flex;
+      justify-content: space-between;
+      div {
+        min-height: 0;
+      }
+    }
+  }
+  .user-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    background-image: url('../../images/bola_avatar.png');
+    background-size: 100px 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  @media (max-width: $screen-sm-max) {
+    .user-avatar {
+      width: 50px;
+      height: 50px;
+      background-size: 70px 70px;
+    }
+  }
+}

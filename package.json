@@ -1,5 +1,5 @@
 {
-  "name": "modern-app",
+  "name": "service-provider-app",
   "version": "0.0.1",
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
@@ -29,6 +29,9 @@
     "@ionic/angular": "^7.5.0",
     "ionicons": "^7.2.1",
     "rxjs": "~7.8.0",
+    "socket.io": "^4.7.4",
+    "socket.io-client": "^4.7.4",
+    "swiper": "^11.0.7",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.2"
   },

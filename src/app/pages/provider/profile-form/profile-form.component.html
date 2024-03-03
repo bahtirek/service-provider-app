@@ -1,0 +1,85 @@
+<div>
+  <div class="container grid mt-xl">
+    <div class="col flex flex-center gt-md">
+      <img src="../../../assets/images/login.png" alt="" srcset="">
+    </div>
+    <div class="col flex flex-center">
+      <div class="width-400">
+        <h1 class="mb-lg">Sign up</h1>
+        <form [formGroup]="detailsForm">
+          <div class="form-element">
+            <label for="companyName">Company Name</label>
+            <input type="text" id="companyName" formControlName="companyName" />
+            <app-form-error [validate]="validate" [control]="companyName" [onValueChanges]="companyName?.value">
+            </app-form-error>
+          </div>
+          <div class="form-element">
+            <label for="address">Address</label>
+            <input type="text" id="address" formControlName="address" />
+            <app-form-error [validate]="validate" [control]="address" [onValueChanges]="address?.value">
+            </app-form-error>
+          </div>
+          <div class="form-element">
+            <label for="phoneNumber">Phone number</label>
+            <input type="text" id="phoneNumber" formControlName="phoneNumber" />
+            <app-form-error [validate]="validate" [control]="phoneNumber" [onValueChanges]="phoneNumber?.value">
+            </app-form-error>
+          </div>
+
+          <div class="form-element">
+            <textarea id="description" formControlName="description" ></textarea>
+            <label for="description">Description</label>
+            <app-form-error [control]="description" [onValueChanges]="description?.value" [validate]="validate">
+            </app-form-error>
+          </div>
+          <h3 class="mb-lg">Providing services</h3>
+          <div>
+            <div class="form-element column-content-2 mb-md" formArrayName="category">
+              <div *ngFor="let categoryControl of category.controls; let i=index" [formGroupName]="i" class="form-element-checkbox mb-md">
+                <input type="checkbox" formControlName="categoryCheck" id="{{'categoryId' + i}}">
+                <label for="{{'categoryId' + i}}">{{allCategorys[i]['name']}}</label>
+              </div>
+            </div>
+            <app-form-error [message]="categoryErrorMessage"></app-form-error>
+          </div>
+          <h3 class="mb-lg">Working hours</h3>
+          <div>
+            <div class="form-element column-content-2 mb-sm mt-lg" formArrayName="availableDays">
+              <div *ngFor="let availableDayControl of availableDays.controls; let i=index" [formGroupName]="i" class="form-element-checkbox mb-md">
+                <input type="checkbox" formControlName="weekDayCheck" id="{{'weekDayId' + i}}">
+                <label for="{{'weekDayId' + i}}">{{weekDays[i]['weekDay']}}</label>
+              </div>
+            </div>
+            <app-form-error [message]="weekdaysErrorMessage"></app-form-error>
+          </div>
+
+          <div>
+            <div class="form-element grid mt-lg">
+              <div formGroupName="workHours" class="form-element col mr-lg">
+                <select formControlName="fromWorkHourId">
+                  @for (hour of workHoursArray; track $index) {
+                    <option value="{{hour.lkWorkHourId}}">{{hour.workHour}}</option>
+                  }
+                </select>
+                <label for="fromWorkHourId">From</label>
+                <app-form-error [validate]="validate" [control]="fromWorkHourId" [onValueChanges]="fromWorkHourId?.value"></app-form-error>
+              </div>
+              <div formGroupName="workHours" class="form-element col">
+                <select formControlName="toWorkHourId">
+                  @for (hour of workHoursArray; track $index) {
+                    <option value="{{hour.lkWorkHourId}}">{{hour.workHour}}</option>
+                  }
+                </select>
+                <label for="toWorkHourId">To</label>
+                <app-form-error [validate]="validate" [control]="toWorkHourId" [onValueChanges]="toWorkHourId?.value"></app-form-error>
+              </div>
+            </div>
+          </div>
+        </form>
+        <div class="text-right">
+          <button (click)="onSubmit()">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

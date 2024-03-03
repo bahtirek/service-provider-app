@@ -1,0 +1,229 @@
+@import "breakpoints.scss";
+
+.width-400 {
+  width: 100%;
+  max-width: 400px;
+}
+
+.fit {
+  width: 100% !important;
+  height: 100% !important;
+}
+.full-height {
+  height: 100% !important;
+}
+.full-width {
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+.window-height {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  height: 100vh !important;
+}
+.window-width {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  width: 100vw !important;
+}
+.block {
+  display: block !important;
+}
+.inline-block {
+  display: inline-block !important;
+}
+
+$space-xs : (x: 4px, y: 4px) !default;
+$space-sm : (x: 8px, y: 8px) !default;
+$space-md : (x: 16px, y: 16px) !default;
+$space-lg : (x: 24px, y: 24px) !default;
+$space-xl : (x: 32px, y: 32px) !default;
+$space-xxl : (x: 52px, y: 52px) !default;
+$space-xxxl : (x: 68px, y: 68px) !default;
+$space-auto : (x: auto, y: auto) !default;
+$space-none : (x: 0, y: 0) !default;
+
+
+$spaces: (
+  'xs': $space-xs,
+  'sm': $space-sm,
+  'md': $space-md,
+  'lg': $space-lg,
+  'xl': $space-xl,
+  'xxl': $space-xxl,
+  'xxxl': $space-xxxl,
+  'auto': $space-auto,
+  'none': $space-none
+);
+
+@each $space, $value in $spaces {
+  .pa-#{$space} {
+    padding: map-get($value, "y") map-get($value, "x");
+  }
+  .pl-#{$space} {
+    padding-left: map-get($value, "x");
+  }
+  .pr-#{$space} {
+    padding-right: map-get($value, "x");
+  }
+  .pt-#{$space} {
+    padding-top: map-get($value, "y");
+  }
+  .pb-#{$space} {
+    padding-bottom: map-get($value, "y");
+  }
+  .px-#{$space} {
+    padding-left: map-get($value, "x");
+    padding-right: map-get($value, "x");
+  }
+  .py-#{$space} {
+    padding-top: map-get($value, "y");
+    padding-bottom: map-get($value, "y");
+  }
+  .ma-#{$space} {
+    margin: map-get($value, "y") map-get($value, "x");
+  }
+  .ml-#{$space} {
+    margin-left: map-get($value, "x");
+  }
+  .mr-#{$space} {
+    margin-right: map-get($value, "x");
+  }
+  .mt-#{$space} {
+    margin-top: map-get($value, "y");
+  }
+  .mb-#{$space} {
+    margin-bottom: map-get($value, "y");
+  }
+  .mx-#{$space} {
+    margin-left: map-get($value, "x");
+    margin-right: map-get($value, "x");
+  }
+  .my-#{$space} {
+    margin-top: map-get($value, "y");
+    margin-bottom: map-get($value, "y");
+  }
+}
+
+@media screen and (max-width: $screen-sm-max){
+  @each $space, $value in $spaces {
+    .pa-#{$space}-mob {
+      padding: map-get($value, "y") map-get($value, "x");
+    }
+    .pl-#{$space}-mob {
+      padding-left: map-get($value, "x");
+    }
+    .pr-#{$space}-mob {
+      padding-right: map-get($value, "x");
+    }
+    .pt-#{$space}-mob {
+      padding-top: map-get($value, "y");
+    }
+    .pb-#{$space}-mob {
+      padding-bottom: map-get($value, "y");
+    }
+    .px-#{$space}-mob {
+      padding-left: map-get($value, "x");
+      padding-right: map-get($value, "x");
+    }
+    .py-#{$space}-mob {
+      padding-top: map-get($value, "y");
+      padding-bottom: map-get($value, "y");
+    }
+    .ma-#{$space}-mob {
+      margin: map-get($value, "y") map-get($value, "x");
+    }
+    .ml-#{$space}-mob {
+      margin-left: map-get($value, "x");
+    }
+    .mr-#{$space}-mob {
+      margin-right: map-get($value, "x");
+    }
+    .mt-#{$space}-mob {
+      margin-top: map-get($value, "y");
+    }
+    .mb-#{$space}-mob {
+      margin-bottom: map-get($value, "y");
+    }
+    .mx-#{$space}-mob {
+      margin-left: map-get($value, "x");
+      margin-right: map-get($value, "x");
+    }
+    .my-#{$space}-mob {
+      margin-top: map-get($value, "y");
+      margin-bottom: map-get($value, "y");
+    }
+  }
+}
+
+$spacesImportant: (
+  'none': $space-none
+);
+
+@each $space, $value in $spacesImportant {
+  .pa-#{$space} {
+    padding: map-get($value, "y") map-get($value, "x") !important;
+  }
+  .pl-#{$space} {
+    padding-left: map-get($value, "x") !important;
+  }
+  .pr-#{$space} {
+    padding-right: map-get($value, "x") !important;
+  }
+  .pt-#{$space} {
+    padding-top: map-get($value, "y") !important;
+  }
+  .pb-#{$space} {
+    padding-bottom: map-get($value, "y") !important;
+  }
+  .px-#{$space} {
+    padding-left: map-get($value, "x") !important;
+    padding-right: map-get($value, "x") !important;
+  }
+  .py-#{$space} {
+    padding-top: map-get($value, "y") !important;
+    padding-bottom: map-get($value, "y") !important;
+  }
+  .ma-#{$space} {
+    margin: map-get($value, "y") map-get($value, "x") !important;
+  }
+  .ml-#{$space} {
+    margin-left: map-get($value, "x") !important;
+  }
+  .mr-#{$space} {
+    margin-right: map-get($value, "x") !important;
+  }
+  .mt-#{$space} {
+    margin-top: map-get($value, "y") !important;
+  }
+  .mb-#{$space} {
+    margin-bottom: map-get($value, "y") !important;
+  }
+  .mx-#{$space} {
+    margin-left: map-get($value, "x") !important;
+    margin-right: map-get($value, "x") !important;
+  }
+  .my-#{$space} {
+    margin-top: map-get($value, "y") !important;
+    margin-bottom: map-get($value, "y") !important;
+  }
+}
+.mt-auto,
+.my-auto {
+  margin-top: auto;
+}
+.ml-auto {
+  margin-left: auto;
+}
+.mb-auto,
+.my-auto {
+  margin-bottom: auto;
+}
+.mr-auto {
+  margin-right: auto;
+}
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}

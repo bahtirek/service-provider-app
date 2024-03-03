@@ -1,0 +1,37 @@
+
+<div class="card hoverable flex no-wrap provider-card justify-between" (click)="cardClicked()">
+  <ul class="reset">
+    <li class="flex no-wrap">
+      <div class="text-bold mr-md flex">
+        <div class="user-avatar"></div>
+      </div>
+      <div>
+        <ul class="reset">
+          <li>{{providerDetails.companyName}}</li>
+          <li>{{providerDetails.lastName}} {{providerDetails.firstName}}</li>
+        </ul>
+      </div>
+    </li>
+    <li class="flex no-wrap">
+      <div class="text-bold mr-md flex">
+        <span class="material-symbols-outlined">phone</span>
+      </div>
+      <div>{{providerDetails.phoneNumber}}</div>
+    </li>
+    <li class="flex no-wrap">
+      <div class="text-bold mr-md flex">
+        <span class="material-symbols-outlined">email</span>
+      </div>
+      <div>{{providerDetails.email}}</div>
+    </li>
+    <li class="flex no-wrap">
+      <div class="text-bold mr-md flex">
+        <span class="material-symbols-outlined mb-auto">info</span>
+      </div>
+      <div>{{providerDetails.description}}</div>
+    </li>
+  </ul>
+  @if (providerDetails.newMessageCount) {
+    <app-enevelope [newMessageCount]="providerDetails.newMessageCount"></app-enevelope>
+  }
+</div>

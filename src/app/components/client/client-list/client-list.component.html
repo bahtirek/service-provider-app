@@ -1,0 +1,7 @@
+<div class="container column">
+  @for (client of clientList; track $index) {
+    <div class="mb-lg">
+      <app-client-card [client]="client" (cardClickled)="cardClicked($event)"></app-client-card>
+    </div>
+  }
+</div>

@@ -1,0 +1,15 @@
+@if(messageHistory!.length > 0){
+  <button class="cta-btn edited-link" (click)="onMessageHistoryClick()">Edited</button>
+  @if(showMessageHistory) {
+      <div class="message-history-container">
+      @for(message of messageHistory; track $index) {
+        <div class="message-history">
+          <div>
+            <div class="history-date">{{message.createdAt | date:'MM/dd/yy, HH:mm'}}</div>
+            <div class="history-text">{{message.message}}</div>
+          </div>
+        </div>
+      }
+    </div>
+    }
+}

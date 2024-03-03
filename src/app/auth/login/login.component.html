@@ -1,0 +1,45 @@
+<div>
+  <div class="container grid mt-xxl pa-md">
+    <div class="col flex flex-center">
+      <div class="width-400">
+        <h1 class="mb-md">Log in</h1>
+        <app-form-error [message]="errorMessage"></app-form-error>
+       <form [formGroup]="loginForm" class="mt-md">
+        <div class="form-element">
+          <label for="email">Email</label>
+          <input type="email" id="email" formControlName="email" />
+          <app-form-error
+            [validate]="validate"
+            [control]="email"
+            [onValueChanges]="email?.value"
+          ></app-form-error>
+        </div>
+
+        <div class="form-element">
+          <input type="password" id="password" formControlName="password" />
+          <label for="password">Password</label>
+          <app-form-error
+            [control]="password"
+            [onValueChanges]="password?.value"
+            [validate]="validate"
+          ></app-form-error>
+        </div>
+      </form>
+      <div class="text-right">
+        <button (click)="onSubmit()">Login</button>
+      </div>
+      <div class="mt-lg text-right body2">
+        <a [routerLink]="['/registration']" routerLinkActive="router-link-active">
+          Forgot your password?
+        </a>
+      </div>
+      <div class="mt-md text-right body2">
+        Don't have an account? Sign up now!
+        <a [routerLink]="['../registration']" routerLinkActive="router-link-active">
+          Sign up
+        </a>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>

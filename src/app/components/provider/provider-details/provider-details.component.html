@@ -1,0 +1,72 @@
+<div class="card provider-card" (click)="cardClicked()">
+  <ul class="reset">
+    <li class="flex no-wrap">
+      <div class="text-bold mr-md flex">
+        <div class="user-avatar"></div>
+      </div>
+      <div>
+        <ul class="reset">
+          <li>{{providerProfileDetails.companyName}}</li>
+          <li>{{providerProfileDetails.lastName}} {{providerProfileDetails.firstName}}</li>
+        </ul>
+      </div>
+    </li>
+    @if(showDetails) {
+      <li class="flex mt-sm">
+        <div class="text-bold mr-md flex">
+          <span class="material-symbols-outlined">phone</span>
+        </div>
+        <div>{{providerProfileDetails.phoneNumber}}</div>
+      </li>
+      <li class="flex no-wrap">
+        <div class="text-bold mr-md flex">
+          <span class="material-symbols-outlined">email</span>
+        </div>
+        <div>{{providerProfileDetails.email}}</div>
+      </li>
+      <li class="flex no-wrap">
+        <div class="text-bold mr-md flex">
+          <span class="material-symbols-outlined">home_pin</span>
+        </div>
+        <div>{{providerProfileDetails.address}}</div>
+      </li>
+      <li class="flex no-wrap">
+        <div class="text-bold mr-md flex">
+          <span class="material-symbols-outlined mb-auto">info</span>
+        </div>
+        <div>{{providerProfileDetails.description}}</div>
+      </li>
+    }
+  </ul>
+  @if(showDetails) {
+    <ul class="ml-xxl mt-xs mb-md">
+      @for(category of providerProfileDetails.category; track $index){
+        <li class="pa-none">{{category?.name}}</li>
+      }
+    </ul>
+    <div class="flex no-wrap">
+      <div class="text-bold mr-md flex">
+        <span class="material-symbols-outlined">calendar_month</span>
+      </div>
+      <ul class="work-hours-list">
+        @for(day of providerProfileDetails.availableDays; track $index){
+          <li>
+            <div>{{day.weekDay}}</div>
+            <div>{{providerProfileDetails.workHours}}</div>
+          </li>
+        }
+      </ul>
+    </div>
+  }
+  @if(!hideMoreButton){
+    <div class="flex justify-end mt-xs">
+      <button (click)="more()" class="cta-btn btn-icon more-btn-cta" tabindex="0">
+        @if(!showDetails) {
+          <span class="material-symbols-outlined">expand_more</span>
+        } @else {
+          <span class="material-symbols-outlined">expand_less</span>
+        }
+      </button>
+    </div>
+  }
+</div>

@@ -1,0 +1,14 @@
+<div>
+  <div class="flex">
+    <div class="form-element col-grow-2 mr-lg">
+      <label for="companyName">Provider & Service Search</label>
+      <input type="text" id="companyName" [(ngModel)]="searchKeyword" />
+      <app-form-error [message]="errorMessage">
+      </app-form-error>
+    </div>
+    <div class="mr-lg">
+      <app-category-select (onCategorySelect)="onCategorySelect($event)"></app-category-select>
+    </div>
+    <button (click)="searchProviders()">Search</button>
+  </div>
+</div>

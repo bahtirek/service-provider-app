@@ -1,0 +1,55 @@
+button, .btn {
+  height: 38px;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-radius: 8px;
+  border: 1px;
+  min-width: 120px;
+  background-color: var(--primary-background);
+  color: var(--primary-inverse);
+  &:hover {
+    cursor: pointer;
+    background-color: var(--primary-hover);
+  }
+  &:active {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  &.btn-danger {
+    background-color: var(--danger);
+  }
+  &.cta-btn {
+    border: none;
+    padding: 0;
+    color: var(--primary);
+    background-color: transparent;
+    min-width: initial;
+    height: 20px;
+    &:hover {
+      background-color: transparent;
+    }
+    &.white {
+      color: var(--white);
+    }
+  }
+  &.btn-icon {
+    display: inline-flex;
+    align-items: center;
+    box-shadow: none;
+    .material-symbols-outlined {
+      font-size: 15px;
+    }
+    &.more-btn {
+      padding: 8px;
+      .material-symbols-outlined {
+        font-size: 30px;
+      }
+    }
+    &.more-btn-cta {
+      .material-symbols-outlined {
+        display: inline-block;
+        margin-bottom: -10px;
+        font-size: 24px;
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+<div class="flex no-wrap mb-sm">
+  @if(fileType=='IMG'){
+    <div class="file-image" [ngStyle]="{'background-image': fileUrl}"></div>
+  }@else if(fileType=='VID' && fileUrl){
+    <div class="file-image" [ngStyle]="{'background-image': fileUrl}"></div>
+  } @else {
+    <div class="file-image">
+      <div class="file-type">
+        <span>{{fileType}}</span>
+      </div>
+    </div>
+  }
+
+  <div class="flex column justify-around ml-md">
+    <div>{{file?.name}}</div>
+    <div class="body2">{{file?.size! | fileSize}}</div>
+  </div>
+</div>

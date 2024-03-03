@@ -1,0 +1,39 @@
+.file-image {
+  height: 40px;
+  width: 40px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.file-type {
+  --b: 2px; /* border */
+  --s: 5px; /* size of the cut */
+  --c: var(--primary);
+
+  width: 30px;
+  height: 40px;
+
+  border: var(--b) solid var(--c);
+  border-radius: 0px;
+  clip-path: polygon(0 0,calc(100% - var(--s)) 0,100% var(--s),100% 100%,0 100%);
+  background: linear-gradient(-135deg,var(--c) calc(0.707*var(--s) + var(--b)),#0000 0) border-box;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  span {
+    font-size: 13px;
+    color: var(--primary);
+  }
+}
+
+.file-name {
+  padding-top: 3px;
+}

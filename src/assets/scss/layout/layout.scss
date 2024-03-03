@@ -1,0 +1,51 @@
+@import "../base/breakpoints.scss";
+
+.container {
+  max-width: 1280px;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  &.container-md {
+    max-width: 800px;
+  }
+}
+
+.card {
+  padding: 20px 30px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background-color: #fff;
+  &.hoverable {
+    &:hover {
+      cursor: pointer;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+  }
+  @media (max-width: $screen-sm-max) {
+    padding: 20px 20px;
+  }
+}
+
+li.hoverable {
+  cursor: pointer;
+  &:not(:last-child){
+    border-bottom: 1px solid var(--border-color);
+  }
+  &:first-child {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+  }
+  &:last-child {
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  &:hover {
+    background-color: #efefef;
+  }
+}
+
+ul.reset {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}

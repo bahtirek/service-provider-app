@@ -1,0 +1,10 @@
+<div class="form-element">
+  <select [(ngModel)]="category" (ngModelChange)="onSelect($event)">
+    <option [value]="nullValue" selected disabled>Choose category</option>
+    @for (category of allCategorys; track $index) {
+      <option value="{{category.lkCategoryId}}">{{category.name}}</option>
+    }
+    <option [value]="nullValue" selected>All categories</option>
+  </select>
+  <label for="toWorkHourId">Service Category</label>
+</div>

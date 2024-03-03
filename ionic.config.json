@@ -1,5 +1,5 @@
 {
-  "name": "modern-app",
+  "name": "service-provider-app",
   "integrations": {
     "capacitor": {}
   },

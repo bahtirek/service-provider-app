@@ -1,0 +1,16 @@
+<div>
+  @if(files && files.length >0){
+    <h3 class="mb-lg">{{files.length}} files selected</h3>
+  }
+  @for(file of files; track $index){
+    <app-file-details [fileProp]="file" (thumbnailEvent)="handleThumbnailEvent($event, $index)"></app-file-details>
+  }
+  <div class="form-element mt-xxl">
+    <label for="sessionTitle">Comment</label>
+    <input type="text" id="sessionTitle" [(ngModel)]="comment" />
+  </div>
+  <div class="flex mt-xl btn-group">
+    <button  class="block ml-auto btn-danger" (click)="onCancel()">Cancel</button>
+    <button  class="block ml-lg" (click)="onSend()">Send</button>
+  </div>
+</div>

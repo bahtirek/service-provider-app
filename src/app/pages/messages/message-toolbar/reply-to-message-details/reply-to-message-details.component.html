@@ -1,0 +1,20 @@
+<div class="reply-to-message-container">
+  <span class="material-symbols-outlined">reply</span>
+  <div class="message-details">
+    @if(attachment?.thumbnailUrl){
+      <div class="attachment mr-sm">
+        <div class="attachment-container">
+          <div class="file-image" [ngStyle]="{'background-image': attachmentUrl}"></div>
+        </div>
+      </div>
+    }
+    <div class="message-text">
+      <div class="text-primary text-13 mb-xs truncated">{{title}}</div>
+      @if(attachment && !attachment.thumbnailUrl){
+        <div class="text-11 text-darkest truncated">{{attachment.attachmentOriginalName}}</div>
+      }
+      <div class="text-13 truncated">{{message.message}}</div>
+    </div>
+  </div>
+  <span class="material-symbols-outlined text-primary hoverable" (click)="cancel()">close</span>
+</div>

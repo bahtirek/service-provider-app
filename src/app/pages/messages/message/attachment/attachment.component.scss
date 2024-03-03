@@ -1,0 +1,22 @@
+.attachment-container {
+  &:hover {
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  img {
+    border-radius: 6px;
+  }
+}
+
+.gif-message {
+  width: 100%;
+  height: auto;
+}
+
+.download-btn {
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  cursor: pointer;
+}

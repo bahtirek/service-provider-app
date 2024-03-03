@@ -1,0 +1,54 @@
+<app-menu></app-menu>
+
+  <ion-content [fullscreen]="true" color="light"  id="main-content">
+    <app-header></app-header>
+    <ion-grid class="search-grid">
+      <ion-row  class="mt-lg">
+        <ion-col  size="auto" class="flex items-center">
+          <ion-buttons class="search">
+              <ion-icon name="options-outline"></ion-icon>
+          </ion-buttons>
+        </ion-col>
+        <ion-col>
+          <div class="form-element col-grow-2 mr-lg mr-none-mob mb-none">
+            <label for="companyName">Provider & Service Search</label>
+            <input type="text" id="companyName" [(ngModel)]="searchKeyword" />
+            <app-form-error></app-form-error>
+          </div>
+        </ion-col>
+        <ion-col  size="auto" class="flex items-center">
+          <ion-buttons class="search">
+              <ion-icon name="search-outline"></ion-icon>
+          </ion-buttons>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  <!--   @if(popular.length > 0){
+      <swiper-container
+        [modules]="swiperModules"
+        [slidesPerView]="1.5"
+        [keyboard]="true"
+        [centerSlides]="true"
+      >
+      @for(provider of popular; track provider.id) {
+        <swiper-slide>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>{{provider.title}}</ion-card-title>
+            </ion-card-header>
+
+            <ion-card-content>
+              {{provider.description}}
+            </ion-card-content>
+          </ion-card>
+        </swiper-slide>
+      }
+      </swiper-container>
+    } -->
+  </ion-content>
+

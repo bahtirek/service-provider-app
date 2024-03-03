@@ -1,0 +1,18 @@
+.form-element {
+  .form-element-radio {
+    display: flex;
+    align-items: center;
+    input[type="radio"] {
+      width: 22px;
+      height: 22px;
+    }
+    label {
+      position: relative;
+      font-size: 15px;
+      padding: 0 0 0 10px;
+      left: initial;
+      top: initial;
+      background: transparent;
+    }
+  }
+}

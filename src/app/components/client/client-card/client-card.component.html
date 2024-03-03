@@ -1,0 +1,22 @@
+
+<div class="card hoverable provider-card flex no-wrap" (click)="cardClicked()">
+  <ul class="reset">
+    <li class="flex">
+      <div class="text-bold mr-md flex">
+        <span class="material-symbols-outlined">badge</span>
+      </div>
+      <div>{{clientDetails.firstName}} {{clientDetails.lastName}}</div>
+    </li>
+    <li class="flex">
+      <div class="text-bold mr-md flex">
+        <span class="material-symbols-outlined">email</span>
+      </div>
+      <div>{{clientDetails.email}}</div>
+    </li>
+  </ul>
+  @if (clientDetails.newMessageCount) {
+    <div class="ml-auto">
+      <app-enevelope [newMessageCount]="clientDetails.newMessageCount"></app-enevelope>
+    </div>
+  }
+</div>

@@ -1,0 +1,6 @@
+<div class="container container-md">
+  <app-back-button></app-back-button>
+  <div class="flex column">
+    <app-subject-list [subjectList]="subjectList" [displayAsCard]="displayAsCard" (onSubjectClick$)="onSubjectClick($event)"></app-subject-list>
+  </div>
+</div>

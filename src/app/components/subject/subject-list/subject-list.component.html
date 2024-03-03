@@ -1,0 +1,19 @@
+<div class="container column">
+  @if(displayAsCard){
+    @for (subject of subjectList; track $index) {
+      <app-subject-card [subject]="subject"></app-subject-card>
+    }
+  } @else {
+    @if(subjectList.length > 0) {
+      <div class="card pa-none">
+        <ul class="reset">
+          @for (subject of subjectList; track $index) {
+            <li class="hoverable">
+              <app-subject [subject]="subject" (onSubjectClick$)="onSubjectClick($event)"></app-subject>
+            </li>
+          }
+        </ul>
+      </div>
+    }
+  }
+</div>

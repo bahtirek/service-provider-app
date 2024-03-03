@@ -1,0 +1,36 @@
+<div class="message-container" [ngClass]="[messageType, highlight]">
+  <div class="message-avatar"></div>
+  <div class="message-content" #messageContent>
+    <div class="message-heading">
+      <span class="message-author">
+        {{receiver?.firstName}} {{receiver?.lastName}}
+      </span>
+      <span class="more-horiz show-on-hover-parent" [ngClass]="[showFloatMenu, ]">
+        <app-float-menu-horizontal [menuItems]="menuItems" [viewedProp]="message.viewed!" (menuActionEmit)="menuActionHandle($event)"></app-float-menu-horizontal>
+        <span class="material-symbols-outlined text-primary" (click)="onMenuClick()">more_horiz</span>
+      </span>
+      <span class="message-date">{{message.createdAt | date:'HH:mm'}}</span>
+      @if (message.viewed) {
+        <span class="material-symbols-outlined text-primary done-all">done_all</span>
+      } @else {
+        <span class="material-symbols-outlined text-primary done-all">done</span>
+      }
+    </div>
+    <div class="message-text" [ngClass]="{'text-bold': !message.viewed && messageType=='in'}">
+      <app-reply-to-message (goToMesaageEmit)="goToMessage()" [replyToMessage]="message.replyToMessage" [receiver]="receiver" [user]="user"></app-reply-to-message>
+      <app-message-history [messageHistory]="message.messageHistory!"></app-message-history>
+      <div>{{message.message}}</div>
+      @if(message.attachments && message.attachments.length > 0) {
+        <div class="mb-sm"></div>
+      }
+      @for(attachment of message.attachments; track $index){
+        <app-attachment [fileProp]="attachment" (onAttachmentClickEmit)="onAttachmentClick($event)"></app-attachment>
+      }
+      @if(message.totalUploads && message.totalUploads > 0 && messageType=='out'){
+        <div class="flex justify-center items-center py-sm px-xxl">
+          <div class="dot-flashing"></div>
+        </div>
+      }
+    </div>
+  </div>
+</div>

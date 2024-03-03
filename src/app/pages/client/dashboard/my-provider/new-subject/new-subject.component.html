@@ -1,0 +1,9 @@
+<div>
+  <div class="form-element mt-lg">
+    <label for="sessionTitle">Session Title</label>
+    <input type="text" id="sessionTitle" [(ngModel)]="sessionTitle" (ngModelChange)="onModelChange($event)" />
+    <app-form-error [message]="errorMessage">
+    </app-form-error>
+  </div>
+  <button (click)="createSession()" class="block ml-auto">Submit</button>
+</div>

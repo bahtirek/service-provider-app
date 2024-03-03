@@ -1,0 +1,11 @@
+<div class="container container-md pt-xl column">
+  <!-- <app-provider-search (foundProviders)="foundProviders($event)"></app-provider-search> -->
+    <h2 class="mb-md">My Providers</h2>
+    @if(providers.length > 0) {
+      <app-provider-list [providers]="providers" (cardClickled)="cardClicked($event)"></app-provider-list>
+    } @else {
+      <a class="mt-xl"  [routerLink]="['/search/providers']" routerLinkActive="router-link-active" >
+        Find Provider
+      </a>
+    }
+</div>

@@ -1,0 +1,67 @@
+<div>
+  <div class="container grid mt-xxl">
+    @if (registrationIsOn) {
+      <div class="col flex flex-center gt-md">
+        <img src="../../../assets/images/login.png" alt="" srcset="">
+      </div>
+      <div class="col flex flex-center">
+        <div class="width-400">
+          <h1 class="mb-xl">Sign up</h1>
+          <form [formGroup]="registrationForm">
+            <div class="form-element">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" formControlName="firstName" />
+              <app-form-error [validate]="validate" [control]="firstName" [onValueChanges]="firstName?.value">
+              </app-form-error>
+            </div>
+            <div class="form-element">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" formControlName="lastName" />
+              <app-form-error [validate]="validate" [control]="lastName" [onValueChanges]="lastName?.value">
+              </app-form-error>
+            </div>
+            <div class="form-element">
+              <label for="email">Email</label>
+              <input type="email" id="email" formControlName="email" />
+              <app-form-error [validate]="validate" [control]="email" [onValueChanges]="email?.value"></app-form-error>
+            </div>
+
+            <div class="form-element">
+              <input type="password" id="password" formControlName="password" />
+              <label for="password">Password</label>
+              <app-form-error [control]="password" [onValueChanges]="password?.value" [validate]="validate">
+              </app-form-error>
+            </div>
+            <div class="form-element">
+              <label for="confirmPassword">Confirm Password</label>
+              <input type="password" id="confirmPassword" formControlName="confirmPassword" />
+              <app-form-error [validate]="validate" [control]="confirmPassword" [onValueChanges]="confirmPassword?.value" [validateOnce]="validateConfirmPassword">
+              </app-form-error>
+            </div>
+            <div class="form-element">
+              <div class="form-element-radio mb-md">
+                <input type="radio" id="client" formControlName="userType" value="client" />
+                <label for="userType">I am seeking for a service</label>
+              </div>
+              <div class="form-element-radio mb-sm" >
+                <input type="radio" id="provider" formControlName="userType" value="provider" />
+                <label for="userType">I am a service provider</label>
+              </div>
+              <app-form-error [validate]="validate" [control]="userType" [onValueChanges]="userType?.value">
+              </app-form-error>
+            </div>
+          </form>
+          <div class="text-right">
+            <button (click)="onSubmit()">Sign up</button>
+          </div>
+        </div>
+      </div>
+    } @else {
+      <div class="flex justify-center full-width pt-xxxl">
+        <div class="col-6">
+          Verify your email address
+        </div>
+      </div>
+    }
+  </div>
+</div>

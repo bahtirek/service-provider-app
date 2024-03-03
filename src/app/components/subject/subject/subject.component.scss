@@ -1,0 +1,14 @@
+@import "../../../../assets/scss/base/breakpoints.scss";
+
+span {
+  min-height: 40px;
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding: 8px 32px;
+  display: flex;
+  align-items: center;
+  @media (max-width: $screen-sm-max) {
+    padding: 8px 16px;
+  }
+}

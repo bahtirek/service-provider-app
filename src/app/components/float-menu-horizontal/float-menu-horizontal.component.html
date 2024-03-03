@@ -1,0 +1,9 @@
+<div class="float-menu show-on-hover-child">
+  <div class="flex no-wrap">
+    @for (item of menuItems; track $index) {
+      <div class="menu-btn" (click)="btnClick(item.action!)" [ngClass]="{'disabled': item.action == disable}">
+        <div class="material-symbols-outlined">{{item.icon}}</div>
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,38 @@
+:root {
+  --text-selection-color: rgba(2, 154, 232, 0.25);
+  --primary: #0172ad;
+  --primary-background: #0172ad;
+  --primary-underline: rgba(1, 114, 173, 0.5);
+  --primary-hover: #015887;
+  --primary-hover-background: #02659a;
+  --primary-focus: rgba(2, 154, 232, 1);
+  --primary-inverse: #fff;
+  --white: #fff;
+  --grey: #666;
+  --grey-dark: #404040;
+  --grey-darkest: #272727;
+  --grey-light: #c4c8c7;
+  --grey-lightest: #eef1f2;
+  --danger: #cd1717;
+  --border-color: #dadce0;
+  --bg-hover: #eef1f2;
+}
+
+.text-primary {
+  color: var(--primary);
+}
+.text-dark {
+  color: var(--grey-dark);
+}
+.text-darkest {
+  color: var(--grey-darkest);
+}
+.bg-primary {
+  background-color: var(--primary);
+}
+.text-light {
+  color: var(--grey-light);
+}
+.text-white {
+  color: var(--white);
+}

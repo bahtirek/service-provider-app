@@ -1,0 +1,15 @@
+<div class="container column">
+  @if(listTypeCard){
+    @for (provider of providerList; track $index) {
+      <div class="mb-lg">
+        <app-provider-card [provider]="provider" (cardClickled)="cardClicked($event)"></app-provider-card>
+      </div>
+    }
+  } @else {
+    <div class="card provider-list-item">
+      @for (provider of providerList; track $index; let last = $last;) {
+        <app-provider-list-item [provider]="provider" (cardClickled)="cardClicked($event)" [ngClass]="{'last-item': last}"></app-provider-list-item>
+      }
+    </div>
+  }
+</div>

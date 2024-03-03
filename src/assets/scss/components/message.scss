@@ -1,0 +1,147 @@
+
+.message-container {
+  padding: 5px 32px 5px 12px;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+  width: 100%;
+  color: #272727;
+  position: relative;
+  border-radius: 0px !important;
+  @media(max-width: $screen-sm-max) {
+    padding: 5px 24px 5px 6px;
+  }
+  .message-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    background-image: url('../../images/bola_avatar.png');
+    background-size: 60px 60px;
+    background-repeat: no-repeat;
+    background-position: center;
+    flex-shrink: 0;
+    @media(max-width: $screen-sm-max) {
+      width: 35px;
+      height: 35px;
+      background-size: 50px 50px;
+    }
+  }
+  .message-text {
+    white-space: pre-line;
+    background-color: #e8f3ff;
+    border-radius: 10px;
+    padding: 5px 9px 7px;
+    margin-top: 5px;
+    margin-right: auto;
+    margin-left: initial;
+    max-width: 90%;
+    font-size: 14px;
+    position: relative;
+    @media (max-width: $screen-sm-max) {
+      font-size: 16px;
+    }
+    .reply-to-details {
+      width: 250px;
+      font-size: 12px;
+      padding: 5px 8px;
+      border-radius: 6px;
+      background-color: #76797b2e;
+      margin-bottom: 5px;
+      cursor: pointer;
+      .material-symbols-outlined {
+        font-size: 20px;
+      }
+
+      @media (max-width: $screen-sm-max) {
+        width: auto;
+      }
+      .file-image {
+        height: 35px;
+        width: 35px;
+        margin-left: -2px;
+      }
+    }
+    .edited-link {
+      font-size: 11px;
+      text-decoration: none;
+      box-shadow: none;
+      margin-left: auto;
+      height: initial;
+      display: block;
+      padding-bottom: 2px;
+    }
+  }
+  .message-author, .message-date {
+    display: inline-block;
+    font-size: 13px;
+    color: #404040;
+  }
+  .message-date, .message-time {
+    font-size: 11px;
+    margin-left: 10px;
+  }
+  .message-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    .message-heading{
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      .done-all {
+        display: none;
+      }
+
+      .more-horiz {
+        height: 13px;
+        display: flex;
+        align-items: center;
+        margin-left: 8px;
+        position: relative;
+        .material-symbols-outlined {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  &.out {
+    .message-content {
+      justify-content: flex-end;
+      .message-heading{
+        text-align: right;
+        position: relative;
+        .done-all {
+          display: block;
+          position: absolute;
+          right: -20px;
+          font-size: 17px;
+          top: -4px;
+        }
+      }
+      .message-text {
+        margin-left: auto;
+        margin-right: initial;
+        background-color: #f3f3f3;
+        text-align: left;
+      }
+    }
+    .message-author, .message-avatar {
+      display: none;
+    }
+  }
+  &.in {
+    .message-heading{
+      justify-content: flex-start;
+      .more-horiz {
+        order: 3;
+      }
+    }
+  }
+  transition: background-color 1000ms linear;
+  background-color: transparent;
+  border-radius: 10px;
+  &.highlight-message {
+    background-color: #83bbff8a;
+  }
+}

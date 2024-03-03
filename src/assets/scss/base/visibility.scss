@@ -1,0 +1,135 @@
+@media (max-width: $screen-sm-max) {
+  .sm-hide,
+  .xs,
+  .lt-sm,
+  .gt-sm,
+  .md,
+  .gt-md,
+  .lg,
+  .gt-lg,
+  .xl {
+    display: none !important;
+  }
+}
+
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+  .md-hide,
+  .xs,
+  .lt-sm,
+  .sm,
+  .lt-md,
+  .gt-md,
+  .lg,
+  .gt-lg,
+  .xl {
+    display: none !important;
+  }
+}
+@media (min-width: $screen-lg-min) {
+  .lg-hide,
+  .xs,
+  .lt-sm,
+  .sm,
+  .lt-md,
+  .md,
+  .lt-lg,
+  .gt-lg,
+  .xl {
+    display: none !important;
+  }
+}
+
+.no-margin {
+  margin: 0 !important;
+}
+.no-padding {
+  padding: 0 !important;
+}
+.no-border {
+  border: 0 !important;
+}
+.no-border-radius {
+  border-radius: 0 !important;
+}
+.no-box-shadow {
+  box-shadow: none !important;
+}
+.no-outline {
+  outline: 0 !important;
+}
+.hidden {
+  display: none !important;
+}
+.invisible,
+.invisible * {
+  visibility: hidden !important;
+  transition: none !important;
+  animation: none !important;
+}
+.transparent {
+  background: transparent !important;
+}
+.overflow-auto {
+  overflow: auto !important;
+}
+.overflow-hidden {
+  overflow: hidden !important;
+}
+.overflow-hidden-y {
+  overflow-y: hidden !important;
+}
+
+.relative {
+  position: relative;
+}
+
+.show-on-hover-parent {
+  @media (min-width: $screen-lg-min) {
+    &:hover {
+      .show-on-hover-child {
+        display: block;
+      }
+    }
+  }
+  @media (max-width: $screen-sm-max) {
+    &.hold {
+      .show-on-hover-child {
+        display: block;
+      }
+    }
+  }
+  .show-on-hover-child {
+    display: none;
+  }
+}
+
+.show-on-hold-parent {
+  &.hold {
+    .show-on-hover-child {
+      display: block;
+    }
+  }
+
+  .show-on-hover-child {
+    display: none;
+  }
+}
+
+.hoverable {
+  cursor: pointer;
+}
+
+.truncated {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.disabled {
+  opacity: .5 !important;
+  pointer-events: none !important;
+  &:hover {
+    cursor: none !important;
+    color: initial !important;
+  }
+}

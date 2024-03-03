@@ -1,0 +1,16 @@
+@if(replyToMessage!.replyToMessageId){
+  <div class="reply-to-details flex" (click)="goToMessage()">
+    @if(replyToMessage!.thumbnailUrl) {
+      <div class="file-image mr-sm" [ngStyle]="{'background-image': 'url(' + replyToMessage!.thumbnailUrl + ')' }"></div>
+    }
+    <div>
+      @if(replyToMessage?.originalMessageCreatedBy == user?.userId){
+        <div class="truncated text-primary">{{user?.firstName}} {{user?.lastName}}</div>
+        <div class="truncated">{{replyToMessage!.replyToMessage}}</div>
+      } @else {
+        <div class="truncated text-primary">{{receiver?.firstName}} {{receiver?.lastName}}</div>
+        <div class="truncated">{{replyToMessage!.replyToMessage}}</div>
+      }
+    </div>
+  </div>
+}

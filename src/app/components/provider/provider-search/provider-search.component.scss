@@ -1,0 +1,8 @@
+@media(max-width: 767px) {
+  .form-element {
+    width: 100%;
+    &.col-grow-2 {
+      flex-grow: initial;
+    }
+  }
+}

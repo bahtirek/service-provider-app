@@ -1,0 +1,17 @@
+.message-history-container {
+  display: flex;
+  flex-direction: column;
+  .message-history {
+    margin-bottom: 6px;
+    .history-date {
+      color: var(--grey-darkest);
+      font-size: 11px;
+      font-weight: bold;
+    }
+    .history-text {
+      color: var(--grey);
+      font-size: 12px;
+      margin-bottom: 4px;
+    }
+  }
+}

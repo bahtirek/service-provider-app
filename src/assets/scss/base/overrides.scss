@@ -1,0 +1,19 @@
+.main-menu .list-md {
+  padding: 0;
+  .in-list {
+    --padding-start: 0;
+  }
+}
+
+ion-header {
+  ion-toolbar {
+    ion-thumbnail {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      ion-icon {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

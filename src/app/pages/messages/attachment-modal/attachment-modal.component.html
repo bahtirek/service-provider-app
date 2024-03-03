@@ -1,0 +1,10 @@
+@if (modalValue) {
+  <div role="dialog" class="attachment-modal" [ngClass]="{'fade-anim': fadeAnim, 'in': fadeIn}" (click)="closeModal()">
+    <div class="attachment-modal-content">
+      <span class="material-symbols-outlined attachment-modal-close">close</span>
+      <div (click)="preventClick($event)">
+        <ng-content></ng-content>
+      </div>
+    </div>
+  </div>
+}

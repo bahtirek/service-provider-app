@@ -1,0 +1,24 @@
+<div class="container container-md" #messageContainer>
+  <div class="messages-container" [ngClass]="{'new-message': containerBorder}">
+    <div class="message-container-header flex items-center no-wrap">
+      <app-back-button [class]="'my-sm'" [color]="'white'"></app-back-button>
+      <h4 class="ml-auto">{{subject.title}}</h4>
+    </div>
+    <div class="card pa-xl" #messagesCard>
+      @for (message of messages(); track message.messageId; let index = $index; let last = $last;) {
+        <app-message [scrollIntoViewProp]="message.highlightMessageOnScrollIntoView" [last]="last" [user]="user.user" [message$]="message" [receiver]="receiver" [index]="index" (onMessageIntersect)="onMessageIntersect($event)" (onAttachmentClickEmit)="onAttachmentClick($event)"></app-message>
+        @if(displayDate(index, message.createdAt)){
+          <div class="date-separator">{{message.createdAt | date: 'dd/MM/YYYY,  EEEE'}}</div>
+        }
+      }
+    </div>
+    <app-message-toolbar [receiverId]="receiver.receiverId"></app-message-toolbar>
+  </div>
+</div>
+<app-attachment-modal [(modal)]="toggleImageModal">
+  <img [src]="attachmentUrl" alt="">
+</app-attachment-modal>
+<app-attachment-modal [(modal)]="toggleVideoModal">
+  <app-video [src]="attachmentUrl" ></app-video>
+</app-attachment-modal>
+<a class="hidden" #downloadLink></a>

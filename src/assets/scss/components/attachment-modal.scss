@@ -1,0 +1,63 @@
+@import "../base/breakpoints.scss";
+
+.attachment-modal {
+  background-color: rgba(0,0,0,.4);
+  bottom: 0;
+  height: 100%;
+  left: 0 !important;
+  overflow: hidden;
+  padding: 60px 16px 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  text-align: center;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media (max-width: $screen-sm-max) {
+    padding: 60px 0 0;
+  }
+  &.fade-anim {
+    transition: opacity 400ms ease-in-out;
+    will-change: opacity;
+    opacity: 0;
+    &.in {
+      opacity: 1;
+    }
+  }
+  .attachment-modal-content {
+    max-height: calc(90% - 70px);
+    max-width: 90%;
+    transition: opacity 400ms ease-in-out;
+    width: 100%;
+    will-change: opacity;
+    display: flex;
+    justify-content: center;
+    @media (max-width: $screen-sm-max) {
+      max-width: 100%;
+    }
+
+    img, video {
+      object-fit: contain;
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+    }
+
+    .attachment-modal-close {
+      position: absolute;
+      right: 40px;
+      top: 90px;
+      cursor: pointer;
+      color: white;
+      background: var(--grey-dark);
+      border-radius: 5px;
+      @media (max-width: $screen-sm-max) {
+        right: 12px;
+        top: 70px;
+      }
+    }
+  }
+}
