@@ -1,7 +1,7 @@
-<div class="relative">
-  <ul class="reset float-menu">
-    @for (item of menuItems; track $index) {
-      <li>{{item.label}}</li>
-    }
-  </ul>
+<div [ngClass]="{'hidden': hideContainer}">
+  <div role="dialog" class="nav-menu-drop-container" [ngClass]="{'fade-anim': fadeAnim, 'in': fadeIn, 'show-drop-menu': fadeIn}" (click)="closeModal()">
+    <div class="nav-drop-links">
+      <ng-content></ng-content>
+    </div>
+  </div>
 </div>

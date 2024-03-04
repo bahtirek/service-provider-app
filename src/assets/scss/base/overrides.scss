@@ -17,3 +17,9 @@ ion-header {
     }
   }
 }
+
+ion-header {
+  &.header-md:after {
+    background: none;
+  }
+}
