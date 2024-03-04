@@ -1,11 +1,40 @@
-<div class="container container-md pt-xl column">
-  <!-- <app-provider-search (foundProviders)="foundProviders($event)"></app-provider-search> -->
-    <h2 class="mb-md">My Providers</h2>
-    @if(providers.length > 0) {
-      <app-provider-list [providers]="providers" (cardClickled)="cardClicked($event)"></app-provider-list>
-    } @else {
-      <a class="mt-xl"  [routerLink]="['/search/providers']" routerLinkActive="router-link-active" >
-        Find Provider
-      </a>
-    }
-</div>
+<ion-header class="ion-no-border">
+  <ion-toolbar color="light" class="">
+    <ion-buttons slot="start">
+      <ion-back-button default-href="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title size="medium">My Providers</ion-title>
+    <ion-buttons slot="end">
+      <ion-thumbnail class="menu" (click)="showMenu()">
+        <ion-icon name="ellipsis-vertical-outline" size="small"></ion-icon>
+      </ion-thumbnail>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<app-float-menu [(modal)]="toggleMenuModal">
+  <!-- <ion-list class="ion-padding drop-menu-list">
+    <ion-item [button]="true">
+      <ion-label (click)="navigateTo('')">Find provider</ion-label>
+    </ion-item>
+  </ion-list> -->
+  <ul class="nav-links">
+    <li>
+      Find provider
+    </li>
+    <li>
+      Find provider
+    </li>
+    <li>
+      Find provider
+    </li>
+  </ul>
+</app-float-menu>
+<ion-content color="light" class="ion-padding mt-lg">
+  @if(providers.length > 0) {
+    <app-provider-list [providers]="providers" (cardClickled)="cardClicked($event)"></app-provider-list>
+  } @else {
+    <a class="mt-xl"  [routerLink]="['/search/providers']" routerLinkActive="router-link-active" >
+      Find Provider
+    </a>
+  }
+</ion-content>

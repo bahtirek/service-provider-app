@@ -4,11 +4,12 @@ import { ChatService } from '../../shared/services/chat.service';
 import { Provider } from '../../shared/interfaces/provider.interface';
 import { ProviderService } from '../../shared/services/provider.service';
 import { take } from 'rxjs/internal/operators/take';
+import { IonContent, IonRouterOutlet } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-client-shell',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [IonContent, IonRouterOutlet],
   templateUrl: './client-shell.component.html',
   styleUrl: './client-shell.component.scss'
 })
