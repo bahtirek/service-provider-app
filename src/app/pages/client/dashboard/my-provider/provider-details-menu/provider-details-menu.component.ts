@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IonContent, IonMenu, IonMenuButton, IonMenuToggle, IonIcon, IonItem, IonNote, IonList, IonLabel, IonToolbar, IonButtons, IonTitle, IonHeader, IonThumbnail, MenuController} from '@ionic/angular/standalone';
+import { IonContent, IonMenu, IonMenuButton, IonIcon, IonItem, IonNote, IonList, IonLabel, IonToolbar, IonButtons, IonTitle, IonHeader, IonThumbnail, MenuController} from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { closeOutline, mailOutline, mapOutline, informationCircleOutline, calendarOutline, callOutline } from 'ionicons/icons';
 import { Provider } from 'src/app/shared/interfaces/provider.interface';
@@ -9,7 +9,7 @@ import { Provider } from 'src/app/shared/interfaces/provider.interface';
   templateUrl: './provider-details-menu.component.html',
   styleUrls: ['./provider-details-menu.component.scss'],
   standalone: true,
-  imports: [IonToolbar, IonNote, IonItem, IonIcon, IonMenu, IonMenuButton, IonContent, IonList, IonLabel, IonButtons, IonToolbar, IonTitle, IonHeader, IonMenuToggle, IonThumbnail, IonIcon,]
+  imports: [IonToolbar, IonNote, IonItem, IonIcon, IonMenu, IonMenuButton, IonContent, IonList, IonLabel, IonButtons, IonToolbar, IonTitle, IonHeader, IonThumbnail, IonIcon,]
 })
 export class ProviderDetailsMenuComponent  implements OnInit {
 
@@ -23,4 +23,5 @@ export class ProviderDetailsMenuComponent  implements OnInit {
     console.log('some');
   }
 
+  toggleSideMenu() { this.menuCtrl.toggle('providerDetailsMenu'); }
 }

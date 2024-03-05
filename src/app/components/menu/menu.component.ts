@@ -1,5 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { IonContent, IonMenu, IonMenuButton, IonMenuToggle, IonIcon, IonItem, IonNote, IonList, IonLabel, IonToolbar, IonButtons, IonTitle, IonHeader, IonThumbnail, MenuController } from '@ionic/angular/standalone';
+import { IonContent, IonMenu, IonMenuButton, IonIcon, IonItem, IonNote, IonList, IonLabel, IonToolbar, IonButtons, IonTitle, IonHeader, IonThumbnail, MenuController } from '@ionic/angular/standalone';
 import { HeaderNavMenu } from 'src/app/shared/interfaces/header-nav-menu.interface';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { addIcons } from 'ionicons';
@@ -12,7 +12,7 @@ import { Subscription } from 'rxjs/internal/Subscription';
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss'],
   standalone: true,
-  imports: [IonToolbar, IonNote, IonItem, IonIcon, IonMenu, IonMenuToggle, IonMenuButton, IonContent, IonList, IonLabel, IonButtons, IonToolbar, IonTitle, IonHeader, IonMenuToggle, IonThumbnail, IonIcon,]
+  imports: [IonToolbar, IonNote, IonItem, IonIcon, IonMenu, IonMenuButton, IonContent, IonList, IonLabel, IonButtons, IonToolbar, IonTitle, IonHeader, IonThumbnail, IonIcon,]
 })
 export class MenuComponent  implements OnInit {
   private auth = inject(AuthService);
@@ -44,6 +44,8 @@ export class MenuComponent  implements OnInit {
       this.loggedInMenuItems = this.clientMenuItems
     }
   }
+
+  toggleSideMenu() { this.menuCtrl.toggle('mainMenu'); }
 
   navigateTo(url: string) {
     console.log(url);

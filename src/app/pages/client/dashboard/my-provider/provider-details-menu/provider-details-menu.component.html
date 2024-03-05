@@ -2,12 +2,10 @@
   <ion-header class="ion-no-border">
     <ion-toolbar class="">
       <ion-buttons slot="end">
-          <ion-menu-toggle>
-          <ion-thumbnail class="menu">
-            <ion-icon name="close-outline"></ion-icon>
-          </ion-thumbnail>
-        </ion-menu-toggle>
-        </ion-buttons>
+        <ion-thumbnail class="menu" (click)="toggleSideMenu()">
+          <ion-icon name="close-outline"></ion-icon>
+        </ion-thumbnail>
+      </ion-buttons>
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding">
