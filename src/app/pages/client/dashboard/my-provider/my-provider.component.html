@@ -1,13 +1,38 @@
-<div class="container container-md">
-  <app-back-button></app-back-button>
+<app-provider-details-menu [providerProfileDetails]="providerProfileDetails"></app-provider-details-menu>
+<ion-header class="">
+  <ion-toolbar color="light" class="">
+    <ion-buttons slot="start">
+      <ion-back-button default-href="/"></ion-back-button>
+    </ion-buttons>
+    <div class="flex no-wrap items-center provider-list-item">
+      <div class="text-bold mr-md flex">
+        <div class="user-avatar"></div>
+      </div>
+      <div>
+        <ul class="reset">
+          <li class="text-14">{{providerProfileDetails.firstName}}</li>
+          <li class="text-14">{{providerProfileDetails.lastName}}</li>
+        </ul>
+      </div>
+    </div>
+    <ion-buttons slot="end">
+      <ion-thumbnail class="menu" (click)="toggleSideMenu()">
+        <ion-icon name="menu-outline"></ion-icon>
+      </ion-thumbnail>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content color="light" class="ion-padding" id="my-provider-content">
   <div class="flex column">
-    <app-provider-details [providerProfile]="providerProfileDetails" [showCompleteDetails]="showCompleteDetails"></app-provider-details>
-
-    <button (click)="createSession()" class="ml-auto my-lg">Start session</button>
-
     <app-subject-list [subjectList]="subjectList" [displayAsCard]="displayAsCard" (onSubjectClick$)="onSubjectClick($event)"></app-subject-list>
   </div>
-</div>
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button (click)="createSession()">
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-fab-button>
+    </ion-fab>
+</ion-content>
+
 <app-modal [(modal)]="toggleModal">
   <app-new-subject [subjectDetails]="subjectDetails" (cancel)="cancel()" (openSession)="openSession($event)" [toggleModal]="toggleModal"></app-new-subject>
 </app-modal>

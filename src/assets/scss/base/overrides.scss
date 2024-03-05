@@ -23,3 +23,21 @@ ion-header {
     background: none;
   }
 }
+
+.header-md {
+  box-shadow: none;
+  border-bottom: 1px solid #c4c8c7;
+}
+.main-menu {
+  .header-md {
+    box-shadow: none;
+    border-bottom: none;
+  }
+  ion-toolbar {
+    --min-height: 40px;
+  }
+}
+
+ion-toolbar {
+  --min-height: 60px;
+}

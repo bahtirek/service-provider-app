@@ -13,11 +13,16 @@ import { BackButtonComponent } from '../../../../components/back-button/back-but
 import { NavigationService } from '../../../../shared/services/navigation.service';
 import { take } from 'rxjs/internal/operators/take';
 import { Subscription } from 'rxjs/internal/Subscription';
+import { IonBackButton, IonButtons, IonContent, IonFab, IonFabButton, IonHeader, IonIcon,  IonThumbnail, IonTitle, IonToolbar, IonList, IonItem, MenuController } from "@ionic/angular/standalone";
+import { FloatMenuComponent } from 'src/app/components/float-menu/float-menu.component';
+import { addIcons } from 'ionicons';
+import { addOutline, ellipsisVerticalOutline, menuOutline } from 'ionicons/icons';
+import { ProviderDetailsMenuComponent } from './provider-details-menu/provider-details-menu.component';
 
 @Component({
   selector: 'app-my-provider',
   standalone: true,
-  imports: [ProviderDetailsComponent, ProviderCardComponent, ModalComponent, NewSubjectComponent, SubjectListComponent, BackButtonComponent],
+  imports: [IonItem, IonList, IonHeader, IonToolbar, IonTitle, IonThumbnail, IonIcon, IonButtons, IonContent, IonBackButton, IonFab, IonFabButton, ProviderDetailsComponent, ProviderCardComponent, ModalComponent, NewSubjectComponent, SubjectListComponent, BackButtonComponent, FloatMenuComponent, ProviderDetailsMenuComponent],
   templateUrl: './my-provider.component.html',
   styleUrl: './my-provider.component.scss'
 })
@@ -39,6 +44,11 @@ export class MyProviderComponent implements OnInit {
   provider: Provider = {};
   providers: Provider[] = [];
   showCompleteDetails: boolean = false;
+  toggleMenuModal: boolean = false;
+
+  constructor(private menuCtrl: MenuController) {
+    addIcons({ellipsisVerticalOutline, addOutline, menuOutline})
+  }
 
   ngOnInit(){
     this.providers = this.providerService.providers;
@@ -111,4 +121,10 @@ export class MyProviderComponent implements OnInit {
   cancel() {
     this.toggleModal = false;
   }
+
+  showMenu(){
+    this.toggleMenuModal = !this.toggleMenuModal
+  }
+
+  toggleSideMenu() { this.menuCtrl.toggle('providerDetailsMenu'); }
 }
