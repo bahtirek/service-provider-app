@@ -1,0 +1,65 @@
+<ion-menu contentId="my-provider-content" class="main-menu" menuId="providerDetailsMenu">
+  <ion-header class="ion-no-border">
+    <ion-toolbar class="">
+      <ion-buttons slot="end">
+          <ion-menu-toggle>
+          <ion-thumbnail class="menu">
+            <ion-icon name="close-outline"></ion-icon>
+          </ion-thumbnail>
+        </ion-menu-toggle>
+        </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <div class="provider-card">
+      <ul class="reset">
+        <li>{{providerProfileDetails.companyName}}</li>
+        <li>{{providerProfileDetails.firstName}}</li>
+        <li>{{providerProfileDetails.lastName}}</li>
+        <li class="flex mt-sm">
+          <div class="text-bold mr-md flex">
+            <ion-icon name="call-outline"></ion-icon>
+          </div>
+          <div>{{providerProfileDetails.phoneNumber}}</div>
+        </li>
+        <li class="flex no-wrap">
+          <div class="text-bold mr-md flex">
+            <ion-icon name="mail-outline"></ion-icon>
+          </div>
+          <div>{{providerProfileDetails.email}}</div>
+        </li>
+        <li class="flex no-wrap">
+          <div class="text-bold mr-md flex">
+            <ion-icon name="map-outline"></ion-icon>
+          </div>
+          <div>{{providerProfileDetails.address}}</div>
+        </li>
+        <li class="flex no-wrap">
+          <div class="text-bold mr-md flex">
+            <ion-icon name="information-circle-outline"></ion-icon>
+          </div>
+          <div>{{providerProfileDetails.description}}</div>
+        </li>
+      </ul>
+      <ul class="ml-xxl mt-xs mb-md">
+        @for(category of providerProfileDetails.category; track $index){
+          <li class="pa-none">{{category?.name}}</li>
+        }
+      </ul>
+      <div class="flex no-wrap">
+        <div class="text-bold mr-md flex">
+          <ion-icon name="calendar-outline"></ion-icon>
+        </div>
+        <ul class="work-hours-list">
+          @for(day of providerProfileDetails.availableDays; track $index){
+            <li>
+              <div>{{day.weekDay}}</div>
+              <div>{{providerProfileDetails.workHours}}</div>
+            </li>
+          }
+        </ul>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-menu>
