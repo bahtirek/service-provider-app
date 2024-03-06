@@ -1,6 +1,12 @@
 <ion-menu contentId="my-provider-content" class="main-menu" menuId="providerDetailsMenu">
   <ion-header class="ion-no-border">
     <ion-toolbar class="">
+      <div>
+        <ion-title size="small" class="py-sm mt-xs">Balance: 0.00</ion-title>
+        <ion-title size="small">
+          <div class="btn cta-btn">Add $$</div>
+        </ion-title>
+      </div>
       <ion-buttons slot="end">
         <ion-thumbnail class="menu" (click)="toggleSideMenu()">
           <ion-icon name="close-outline"></ion-icon>
@@ -14,7 +20,7 @@
         <li>{{providerProfileDetails.companyName}}</li>
         <li>{{providerProfileDetails.firstName}}</li>
         <li>{{providerProfileDetails.lastName}}</li>
-        <li class="flex mt-sm">
+        <!-- <li class="flex mt-sm">
           <div class="text-bold mr-md flex">
             <ion-icon name="call-outline"></ion-icon>
           </div>
@@ -25,7 +31,7 @@
             <ion-icon name="mail-outline"></ion-icon>
           </div>
           <div>{{providerProfileDetails.email}}</div>
-        </li>
+        </li> -->
         <li class="flex no-wrap">
           <div class="text-bold mr-md flex">
             <ion-icon name="map-outline"></ion-icon>
@@ -39,16 +45,18 @@
           <div>{{providerProfileDetails.description}}</div>
         </li>
       </ul>
-      <ul class="ml-xxl mt-xs mb-md">
-        @for(category of providerProfileDetails.category; track $index){
-          <li class="pa-none">{{category?.name}}</li>
-        }
-      </ul>
-      <div class="flex no-wrap">
+      <div class="ml-xl">
+        <ul class="reset">
+          @for(category of providerProfileDetails.category; track $index){
+            <li class="pa-none">{{category?.name}}</li>
+          }
+        </ul>
+      </div>
+      <div class="flex no-wrap mt-md">
         <div class="text-bold mr-md flex">
           <ion-icon name="calendar-outline"></ion-icon>
         </div>
-        <ul class="work-hours-list">
+        <ul class="work-hours-list reset">
           @for(day of providerProfileDetails.availableDays; track $index){
             <li>
               <div>{{day.weekDay}}</div>
