@@ -6,11 +6,12 @@ import { Provider } from '../../../shared/interfaces/provider.interface';
 import { ProviderService } from '../../../shared/services/provider.service';
 import {Location} from '@angular/common';
 import { AuthService } from '../../../shared/services/auth.service';
+import { IonBackButton, IonButtons, IonContent, IonHeader, IonIcon, IonItem, IonList, IonThumbnail, IonTitle, IonToolbar, IonFab, IonFabButton } from "@ionic/angular/standalone";
 
 @Component({
   selector: 'app-providers',
   standalone: true,
-  imports: [ProviderListComponent, ProviderSearchComponent],
+  imports: [IonFabButton, IonFab, IonItem, IonList, IonHeader, IonToolbar, IonTitle, IonThumbnail, IonIcon, IonButtons, IonContent, IonBackButton, ProviderListComponent, ProviderSearchComponent],
   templateUrl: './providers.component.html',
   styleUrl: './providers.component.scss'
 })

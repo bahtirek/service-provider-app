@@ -1,7 +1,14 @@
-<div class="container container-md pt-xl column">
-  <h2 class="mb-lg">Find Provider</h2>
+<ion-header class="">
+  <ion-toolbar color="light" class="">
+    <ion-buttons slot="start">
+      <ion-back-button default-href="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title size="medium">Find provider</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content color="light" class="ion-padding" id="my-provider-content">
   <app-provider-search (foundProviders)="foundProviders($event)"></app-provider-search>
-  @if((results && providers.length == 0) || (searched && providers.length == 0)){
+  @if((results && providers.length === 0) || (searched && providers.length === 0)){
     <h4>No providers found</h4>
   } @else {
     @if(providers.length > 0){
@@ -9,4 +16,4 @@
     }
     <app-provider-list [providers]="providers" (cardClickled)="cardClicked($event)" [listTypeCard]="true"></app-provider-list>
   }
-</div>
+</ion-content>
