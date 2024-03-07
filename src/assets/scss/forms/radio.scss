@@ -13,6 +13,9 @@
       left: initial;
       top: initial;
       background: transparent;
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }

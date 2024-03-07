@@ -9,12 +9,13 @@ import { IonButton, IonButtons, IonCol, IonContent, IonGrid, IonIcon, IonRow, Io
 import { ModalComponent } from '../../modal/modal.component';
 import { addIcons } from 'ionicons';
 import { optionsOutline, searchOutline } from 'ionicons/icons';
+import { CategoryRadioComponent } from '../../category/category-radio/category-radio.component';
 
 
 @Component({
   selector: 'app-provider-search',
   standalone: true,
-  imports: [IonGrid, IonButtons, IonTitle, IonContent, IonButton, IonIcon, IonRow, IonCol, FormErrorComponent, FormsModule, CategorySelectComponent, CategoryCheckComponent, ModalComponent],
+  imports: [IonGrid, IonButtons, IonTitle, IonContent, IonButton, IonIcon, IonRow, IonCol, FormErrorComponent, FormsModule, CategorySelectComponent, CategoryRadioComponent, ModalComponent],
   templateUrl: './provider-search.component.html',
   styleUrl: './provider-search.component.scss'
 })
@@ -69,7 +70,9 @@ export class ProviderSearchComponent {
     }
   }
 
-  onCategoryCheckEmit(categoryId: number[]) {
+  onCategoryCheckEmit(categoryId: number) {
+    console.log(categoryId);
+
     this.category = categoryId;
     this.toggleModal = false;
   }

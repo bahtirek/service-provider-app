@@ -1,0 +1,15 @@
+
+  <h3 class="mb-lg mt-none">Services</h3>
+  <div>
+    <div class="form-element  mb-md" formArrayName="category">
+      <div *ngFor="let category of allCategorys; let i=index" class="form-element-radio mb-md">
+        <input type="radio" id="{{'category' + i}}" name="categoryCheck" [value]="category.lkCategoryId" [(ngModel)]="categoryId">
+        <label for="{{'category' + i}}">{{category.name}}</label>
+      </div>
+    </div>
+  </div>
+
+<div class="text-right mt-lg">
+  <button (click)="emitProviders()">Done</button>
+</div>
+
