@@ -21,16 +21,16 @@ export class CategoryCheckComponent {
     this.detailsForm = this.fb.group({
       category: this.fb.array([])
     });
-    this.detailsForm.controls['category'].valueChanges.subscribe(() => {
-      this.onCategoryCheck.emit(this.filterCategorys());
-    })
+    /* this.detailsForm.controls['category'].valueChanges.subscribe(() => {
+      this.categoryCheckEmit.emit(this.filterCategorys());
+    }) */
   }
 
   ngOnInit(){
     this.getCategory()
   }
 
-  @Output() onCategoryCheck = new EventEmitter<number[]>();
+  @Output() categoryCheckEmit = new EventEmitter<number[]>();
 
   get category() { return this.detailsForm.get('category') as FormArray; }
 
@@ -65,5 +65,9 @@ export class CategoryCheckComponent {
       }
       return filtered;
     }, []);
+  }
+
+  emitProviders(){
+    this.categoryCheckEmit.emit(this.filterCategorys());
   }
 }
