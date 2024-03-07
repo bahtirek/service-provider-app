@@ -1,10 +1,14 @@
 @if (modalValue) {
   <div role="dialog" class="modal" [ngClass]="{'fade-anim': fadeAnim, 'in': fadeIn}">
-    <div class="modal-content">
+    <div class="modal-container">
+      <div class="pt-md pb-xs"></div>
       <span class="modal-close" (click)="closeModal()">
         <ion-icon name="close-outline" size="medium"></ion-icon>
       </span>
-      <ng-content></ng-content>
+      <div class="modal-content">
+        <ng-content></ng-content>
+      </div>
+      <div class="pt-md pb-xs"></div>
     </div>
   </div>
 }

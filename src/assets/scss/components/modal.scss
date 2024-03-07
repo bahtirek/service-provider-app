@@ -24,7 +24,7 @@
     }
   }
 
-  .modal-content {
+  .modal-container {
     background-color: #ffffff;
     border-radius: 10px;
     margin: 16px auto;
@@ -33,19 +33,20 @@
     transition: opacity 400ms ease-in-out;
     width: 100%;
     will-change: opacity;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     text-align: left;
-    padding: 30px 20px;
-    max-height: calc(90% - 70px);
-    overflow: auto;
-    scrollbar-gutter: stable both-edges;
+    max-height: calc(90%);
     margin-top: -60px;
-    @media (max-width: $screen-sm-max) {
-      padding: 20px 10px;
+
+    .modal-content {
+      overflow: auto;
+      padding: 0 20px;
+
     }
     .modal-close {
       position: absolute;
-      right: -4px;
+      right: 8px;
       top: 10px;
       cursor: pointer;
       ion-icon {
