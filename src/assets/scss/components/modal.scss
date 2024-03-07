@@ -23,6 +23,7 @@
       opacity: 1;
     }
   }
+
   .modal-content {
     background-color: #ffffff;
     border-radius: 10px;
@@ -47,6 +48,9 @@
       right: -4px;
       top: 10px;
       cursor: pointer;
+      ion-icon {
+        font-size: 1.5rem;
+      }
     }
   }
 

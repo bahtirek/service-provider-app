@@ -1,10 +1,13 @@
 import { NgClass } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { IonButtons, IonIcon, IonThumbnail } from "@ionic/angular/standalone";
+import { addIcons } from 'ionicons';
+import { closeOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-modal',
   standalone: true,
-  imports: [NgClass],
+  imports: [IonIcon, NgClass, IonButtons, IonThumbnail],
   templateUrl: './modal.component.html',
   styleUrl: './modal.component.scss'
 })
@@ -12,6 +15,10 @@ export class ModalComponent {
   modalValue: boolean = false;
   fadeAnim: boolean = false;
   fadeIn: boolean = false;
+
+  constructor() {
+    addIcons({closeOutline})
+  }
 
   @Output()
   modalChange = new EventEmitter<boolean>();
