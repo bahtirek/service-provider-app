@@ -1,14 +1,25 @@
-<div>
-  <div class="flex">
-    <div class="form-element col-grow-2 mr-lg mr-none-mob">
-      <label for="companyName">Provider & Service Search</label>
-      <input type="text" id="companyName" [(ngModel)]="searchKeyword" />
-      <app-form-error [message]="errorMessage">
-      </app-form-error>
-    </div>
-    <div class="mr-lg grow">
-      <app-category-select [category$]="category" (onCategorySelect)="onCategorySelect($event)"></app-category-select>
-    </div>
-    <button (click)="searchProviders()">Search</button>
-  </div>
-</div>
+
+<ion-grid class="search-grid pa-none">
+  <ion-row  class="mt-lg">
+    <ion-col  size="auto" class="flex items-center">
+      <ion-buttons class="search" (click)="showCategoryList()">
+          <ion-icon name="options-outline"></ion-icon>
+      </ion-buttons>
+    </ion-col>
+    <ion-col>
+      <div class="form-element col-grow-2 mr-lg mr-none-mob mb-none">
+        <label for="companyName">Provider & Service Search</label>
+        <input type="text" id="companyName" [(ngModel)]="searchKeyword" />
+      </div>
+    </ion-col>
+    <ion-col  size="auto" class="flex items-center">
+      <ion-buttons class="search" (click)="searchProviders()">
+          <ion-icon name="search-outline"></ion-icon>
+      </ion-buttons>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+<app-modal [(modal)]="toggleModal">
+  <app-category-check (categoryCheckEmit)="onCategoryCheckEmit($event)"></app-category-check>
+</app-modal>

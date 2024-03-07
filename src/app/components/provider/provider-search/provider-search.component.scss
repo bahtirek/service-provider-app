@@ -1,8 +1,13 @@
-@media(max-width: 767px) {
-  .form-element {
-    width: 100%;
-    &.col-grow-2 {
-      flex-grow: initial;
+.search-grid {
+  margin-right: -10px;
+  margin-left: -10px;
+  .search {
+    padding: 0 4px;
+    ion-icon {
+      font-size: 1.5rem;
     }
+  }
+  .sc-ion-buttons-md-h {
+    z-index: initial;
   }
 }

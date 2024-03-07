@@ -5,12 +5,16 @@ import { FormsModule } from '@angular/forms';
 import { Provider } from '../../../shared/interfaces/provider.interface';
 import { CategorySelectComponent } from '../../category/category-select/category-select.component';
 import { CategoryCheckComponent } from '../../category/category-check/category-check.component';
+import { IonButton, IonButtons, IonCol, IonContent, IonGrid, IonIcon, IonRow, IonTitle } from "@ionic/angular/standalone";
+import { ModalComponent } from '../../modal/modal.component';
+import { addIcons } from 'ionicons';
+import { optionsOutline, searchOutline } from 'ionicons/icons';
 
 
 @Component({
   selector: 'app-provider-search',
   standalone: true,
-  imports: [FormErrorComponent, FormsModule, CategorySelectComponent, CategoryCheckComponent],
+  imports: [IonGrid, IonButtons, IonTitle, IonContent, IonButton, IonIcon, IonRow, IonCol, FormErrorComponent, FormsModule, CategorySelectComponent, CategoryCheckComponent, ModalComponent],
   templateUrl: './provider-search.component.html',
   styleUrl: './provider-search.component.scss'
 })
@@ -19,10 +23,15 @@ export class ProviderSearchComponent {
   searchKeyword: string = "";
   errorMessage: string = "";
   category: any | null = null;
+  toggleModal: boolean = false;
 
   //@Input() searchPage: boolean = true;
 
   @Output() foundProviders: EventEmitter<any> = new EventEmitter();
+
+  constructor() {
+    addIcons({optionsOutline, searchOutline})
+  }
 
   ngOnInit() {
     this.setSearchDetailsIsExists()
@@ -60,8 +69,13 @@ export class ProviderSearchComponent {
     }
   }
 
-  onCategorySelect(categoryId: number) {
-    this.category = categoryId
+  onCategoryCheckEmit(categoryId: number[]) {
+    this.category = categoryId;
+    this.toggleModal = false;
+  }
+
+  showCategoryList(){
+    this.toggleModal = !this.toggleModal;
   }
 }
 
